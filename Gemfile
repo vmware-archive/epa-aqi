@@ -24,7 +24,11 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 
+
 group :development do
+  gem 'git-duet', '~> 0.5.1'
+  gem 'vinz-clortho', '~> 0.2.2'
+
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
 
