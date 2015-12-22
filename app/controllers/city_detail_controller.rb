@@ -25,7 +25,7 @@ class CityDetailController < ApplicationController
   end
 
   def view
-    @zipcode = '90401'
+    @zipcode = params["zipcode"]
     @epa_aqi = epa_service.get_aqi_for_zipcode(@zipcode)
   end
 end
