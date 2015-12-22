@@ -7,12 +7,18 @@ gem 'rails', '4.2.5'
 gem 'sqlite3'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
+gem 'rest-client', '~> 1.8'
+
+
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 
 gem 'rspec-rails', '~> 3.4'
+gem 'rspec-mocks', '~> 3.4'
 gem 'capybara', '~> 2.5'
 gem 'poltergeist', '~> 1.8', '>= 1.8.1'
+
+
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
