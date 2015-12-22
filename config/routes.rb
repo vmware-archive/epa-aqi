@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get '/' => 'home_page#view'
   get 'city_detail' => 'city_detail#view'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
