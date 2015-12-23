@@ -30,6 +30,6 @@ class AirQualityGradeCalculator
     end
   end
   def find_least_healthy_measure(measures)
-    measures.max_by { |measure| measure['Category']['Number'] }
+    measures.max_by { |measure| measure['AQI'] }
   end
 end

@@ -14,6 +14,11 @@ class EpaService
             }
         }
     )
+
+    puts "response from EPA Forecast:\n----\n#{response}\n----" if DEBUG
     JSON.parse(response)
   end
+
+  private
+  DEBUG = false
 end
