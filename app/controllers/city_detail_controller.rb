@@ -5,7 +5,7 @@ class CityDetailController < ApplicationController
 
   def view
     @zipcode = params['zipcode']
-    @aqi_grade = aqg_calculator.for_zipcode(@zipcode)
+    @epa_aqg = aqg_calculator.for_zipcode(@zipcode)
     @user_aqg = params['user-aqg']
   end
 end

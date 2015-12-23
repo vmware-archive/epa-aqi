@@ -1,9 +1,9 @@
 describe CityDetailController do
   let(:mock_aqg_calculator) { instance_double('AirQualityGradeCalculator') }
-  let(:expected_aqi_grade) { 'A' }
+  let(:expected_epa_aqg) { 'A' }
 
   before do
-    allow(mock_aqg_calculator).to receive(:for_zipcode).and_return(expected_aqi_grade)
+    allow(mock_aqg_calculator).to receive(:for_zipcode).and_return(expected_epa_aqg)
     controller.aqg_calculator(mock_aqg_calculator)
   end
 
@@ -20,9 +20,9 @@ describe CityDetailController do
       expect(assigns(:user_aqg)).to eq(user_aqg)
     end
 
-    it 'assigns @aqi_grade to the air quality grade based on EPA\'s AQI scores for the zipcode specified' do
+    it 'assigns @epa_aqg to the air quality grade based on EPA\'s AQI scores for the zipcode specified' do
       get :view
-      expect(assigns(:aqi_grade)).to eq(expected_aqi_grade)
+      expect(assigns(:epa_aqg)).to eq(expected_epa_aqg)
     end
   end
 end

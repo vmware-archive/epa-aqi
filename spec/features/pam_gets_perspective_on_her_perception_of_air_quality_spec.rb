@@ -26,8 +26,8 @@ class User
     expect(page).to have_css('#user-aqg')
     expect(find('#user-aqg')).to have_content(/[A-F]/)
 
-    expect(page).to have_css('#aqi-grade')
-    expect(find('#aqi-grade')).to have_content(/[A-F]/)
+    expect(page).to have_css('#epa-aqg')
+    expect(find('#epa-aqg')).to have_content(/[A-F]/)
   end
 end
 
