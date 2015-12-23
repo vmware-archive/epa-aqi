@@ -57,5 +57,25 @@ describe AirQualityGradeCalculator do
       it('returns a grade of "F"') { expect(subject.for_zipcode(zipcode)).to eq 'F' }
     end
 
+    describe 'when the least healthy measure is not the first' do
+      let(:expected_measures) {
+        JSON.parse("
+        [
+            {
+                \"Category\": {
+                    \"Number\": 1,
+                    \"Name\": \"Good\"
+                }
+            },
+            {
+                \"Category\": {
+                    \"Number\": 6,
+                    \"Name\": \"Hazardous\"
+                }
+            }
+        ]")
+      }
+      it('returns the least healthy measure') { expect(subject.for_zipcode(zipcode)).to eq 'F'}
+    end
   end
 end

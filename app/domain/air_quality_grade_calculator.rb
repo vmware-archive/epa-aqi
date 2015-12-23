@@ -30,6 +30,6 @@ class AirQualityGradeCalculator
     end
   end
   def find_least_healthy_measure(measures)
-    measures[0]
+    measures.max_by { |measure| measure['Category']['Number'] }
   end
 end
