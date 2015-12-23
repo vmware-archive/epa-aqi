@@ -1,21 +1,22 @@
 describe CityDetailController do
-  let(:mock_epa_service) { instance_double('EpaService')}
-  let(:expected_aqi) { 424 }
+  let(:mock_aqg_calculator) { instance_double('AirQualityGradeCalculator') }
+  let(:expected_aqi_grade) { 'A' }
+
   before do
-    allow(mock_epa_service).to receive(:get_aqi_for_zipcode).and_return(expected_aqi)
-    controller.epa_service(mock_epa_service)
+    allow(mock_aqg_calculator).to receive(:for_zipcode).and_return(expected_aqi_grade)
+    controller.aqg_calculator(mock_aqg_calculator)
   end
 
   describe '#view' do
-    it 'asks the EPA Service for the AQI value for the zipcode supplied' do
+    it 'asks the Air Quality Grade Calculator for the AQI grade for the zipcode supplied' do
       zipcode = '90210'
-      get :view, { 'zipcode' => zipcode}
-      expect(mock_epa_service).to have_received(:get_aqi_for_zipcode).with(zipcode)
+      get :view, {'zipcode' => zipcode}
+      expect(mock_aqg_calculator).to have_received(:for_zipcode).with(zipcode)
     end
 
-    it 'assigns @epa_aqi to the EPA\'s AQI value for the zipcode specified' do
+    it 'assigns @aqi_grade to the air quality grade based on EPA\'s AQI scores for the zipcode specified' do
       get :view
-      expect(assigns(:epa_aqi)).to eq(expected_aqi)
+      expect(assigns(:aqi_grade)).to eq(expected_aqi_grade)
     end
   end
 end

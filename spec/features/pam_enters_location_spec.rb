@@ -6,7 +6,7 @@ describe 'City Detail Page', :type => :feature do
     fill_in 'zipcode', with: zipcode
     click_on 'Submit'
 
-    expect(page).to have_css('#aqi-score')
-    expect(find('#aqi-score')).to have_content(/\d{1,3}/)
+    expect(page).to have_css('#aqi-grade')
+    expect(find('#aqi-grade')).to have_content(/[A-F]/)
   end
 end
