@@ -9,7 +9,6 @@ class AirQualityGradeCalculator
     grade_for_category_number(measure['Category']['Number'])
   end
 
-
   private
   def grade_for_category_number(category_number)
     case category_number
