@@ -18,7 +18,7 @@ class User
   end
 
   def clicks_see_what_the_epa_says
-    click_on 'Submit'
+    click_on 'Compare Now'
     expect(find('#page-title')).to have_text('City Detail')
   end
 

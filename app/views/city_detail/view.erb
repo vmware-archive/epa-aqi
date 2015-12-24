@@ -1,12 +1,90 @@
+<nav></nav>
+<div class="date"><%= Time.now.strftime("%b %e, %Y") %></div>
+<div class="city-name">Los Angeles</div>
+<div class="compare-section">
+  <div class="compare-you">
+
+    Your Grade:
+    <span id="user-aqg"><%= @user_aqg %></span>
+
+  </div>
+  <div class="vs"></div>
+  <div class="compare-epa">
+
+    EPA AQI Grade:
+    <span id="epa-aqg"><%= @epa_aqg %></span>
+
+    <div class="compare-aqi-score"></div>
+  </div>
+</div>
+
+<div class="grade-section" style="width: 375px">
+  <div class="pins">
+    <div style="width: 16%;">You</div>
+    <div style="width: 16%;"></div>
+    <div style="width: 16%;">EPA</div>
+    <div style="width: 16%;"></div>
+    <div style="width: 16%;"></div>
+    <div style="width: 16%;"></div>
+  </div>
+  <div class="gradient">
+    <div style="width: 16%; background-color: #fff;">A</div>
+    <div style="width: 16%; background-color: #eee;">B</div>
+    <div style="width: 16%; background-color: #ddd;">C</div>
+    <div style="width: 16%; background-color: #ccc;">D</div>
+    <div style="width: 16%; background-color: #bbb;">E</div>
+    <div style="width: 16%; background-color: #aaa;">F</div>
+  </div>
+  <div class="grade-lines">
+    <div class="grade-line" style="width: 16%;"></div>
+    <div class="grade-line" style="width: 16%;"></div>
+    <div class="grade-line" style="width: 16%;"></div>
+    <div class="grade-line" style="width: 16%;"></div>
+    <div class="grade-line" style="width: 16%;"></div>
+    <div class="grade-line" style="width: 16%;"></div>
+    <div class="grade-line" style="width: 16%;"></div>
+  </div>
+  <div class="aqi-number-scale">
+    <div style="width: 16%;">0</div>
+    <div style="width: 16%;">50</div>
+    <div style="width: 16%;">100</div>
+    <div style="width: 16%;">150</div>
+    <div style="width: 16%;">200</div>
+    <div style="width: 16%;">300</div>
+    <div style="width: 16%;">500</div>
+  </div>
+</div>
+
+
+<div class="parameters-section">
+  <div class="parameter">
+    <div class="parameter-name">Ground-Level Ozone</div>
+    <div class="parameter-aqi-score">38<span>Today</span></div>
+    <div class="parameter-aqi-score">20<span>Average</span></div>
+  </div>
+  <div class="parameter">
+    <div class="parameter-name">Particle Pollution</div>
+    <div class="parameter-aqi-score">51<span>Today</span></div>
+    <div class="parameter-aqi-score">39<span>Average</span></div>
+  </div>
+  <div class="parameter">
+    <div class="parameter-name">Carbon Monoxide</div>
+    <div class="parameter-aqi-score">101<span>Today</span></div>
+    <div class="parameter-aqi-score">157<span>Average</span></div>
+  </div>
+  <div class="parameter">
+    <div class="parameter-name">Sulfur Dioxide</div>
+    <div class="parameter-aqi-score">45<span>Today</span></div>
+    <div class="parameter-aqi-score">25<span>Average</span></div>
+  </div>
+</div>
+
+
+
+
+<!-- TODO: for testing purposes only -->
+<hr />
 <div id="page-title">City Detail</div>
 <div>
   Air Quality for zipcode <%= @zipcode %>
-</div>
-<div>
-  Your Grade:
-  <span id="user-aqg"><%= @user_aqg %></span>
-</div>
-<div>
-  EPA AQI Grade:
-  <span id="epa-aqg"><%= @epa_aqg %></span>
 </div>

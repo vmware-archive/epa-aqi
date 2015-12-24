@@ -1,15 +1,46 @@
+<nav></nav>
+
+<style>
+  input[type="radio"] {
+  }
+  form .grade-btn {
+    display: block;
+    width: 45px;
+    background-color: #eee;
+    padding: 25px 30px 30px 25px;
+    border: 1px solid #ccc;
+    border-radius: 0px;
+    margin-right: 25px;
+  }
+
+</style>
+
+
+<hr/>
 <div id="page-title">Home Page</div>
 
-<form action="/city_detail" method="GET">
-  <label for="zipcode">Enter your zip code:</label>
-  <input type="text" name="zipcode" />
-  <br/>
-  <label for="user-aqg">What does the air feel like today?</label>
-  <input type="radio" id="user-aqg-A" name="user-aqg" value="A"/><label for="user-aqg-A">A</label><br/>
-  <input type="radio" id="user-aqg-B" name="user-aqg" value="B"/><label for="user-aqg-B">B</label><br/>
-  <input type="radio" id="user-aqg-C" name="user-aqg" value="C"/><label for="user-aqg-C">C</label><br/>
-  <input type="radio" id="user-aqg-D" name="user-aqg" value="D"/><label for="user-aqg-D">D</label><br/>
-  <input type="radio" id="user-aqg-E" name="user-aqg" value="E"/><label for="user-aqg-E">E</label><br/>
-  <input type="radio" id="user-aqg-F" name="user-aqg" value="F"/><label for="user-aqg-F">F</label><br/>
-  <button>Submit</button>
-</form>
+<div class="choose-grade-section">
+  <form action="/city_detail" method="GET">
+
+    <div class="location"><span>Hey,</span>
+      <input class="location-zipcode" type="text" name="zipcode" value="90401" />
+      <span class="coaching-tip">Not your location? Enter zip code above</span>
+    </div>
+
+    <br/>
+
+    <h1>What does the air feel like today?</h1>
+    <label class="grade-btn" for="user-aqg-A">A<input type="radio" id="user-aqg-A" name="user-aqg" value="A"/></label>
+    <label class="grade-btn" for="user-aqg-B">B<input type="radio" id="user-aqg-B" name="user-aqg" value="B"/></label>
+    <label class="grade-btn" for="user-aqg-C">C<input type="radio" id="user-aqg-C" name="user-aqg" value="C"/></label>
+    <label class="grade-btn" for="user-aqg-D">D<input type="radio" id="user-aqg-D" name="user-aqg" value="D"/></label>
+    <label class="grade-btn" for="user-aqg-E">E<input type="radio" id="user-aqg-E" name="user-aqg" value="E"/></label>
+    <label class="grade-btn" for="user-aqg-F">F<input type="radio" id="user-aqg-F" name="user-aqg" value="F"/></label>
+
+
+    <h1>Awesome!<br />Now see what the scientists say ...</h1>
+    <p>We have real-time data about air quality, now see what the Air Quality Index in your area.</p>
+
+    <button class="">Compare Now</button>
+  </form>
+</div>
