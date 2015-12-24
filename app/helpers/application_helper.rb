@@ -1,11 +1,10 @@
 module ApplicationHelper
+  TYPE_TO_CLASS = {
+      one_pin: 'single-pin',
+      two_pin: 'multiple-pins'
+  }
+
   def slot_type_to_css_class(slot_type)
-    if slot_type == :one_pin
-      'single-pin'
-    elsif slot_type == :two_pin
-      'multiple-pins'
-    elsif slot_type == :empty || slot_type.nil?
-      'empty-slot'
-    end
+    TYPE_TO_CLASS[slot_type] || 'empty-slot'
   end
 end
