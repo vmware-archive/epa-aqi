@@ -2,7 +2,7 @@ describe SlotFactory, :type => :custom do
   YOU_SLOT = Slot.new(:one_pin, 'You')
   EPA_SLOT = Slot.new(:one_pin, 'EPA')
   BOTH_SLOT = Slot.new(:two_pin, 'You and EPA')
-  EMPTY_SLOT = Slot.new(:empty, '')
+  EMPTY_SLOT = Slot.new(:empty, nil)
 
   describe '#for_grades' do
     subject { SlotFactory.new.for_grades(epa_grade, user_grade) }

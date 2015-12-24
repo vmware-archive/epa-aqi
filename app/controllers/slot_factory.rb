@@ -11,7 +11,7 @@ class SlotFactory
         slot = Slot.new(:two_pin, 'You and EPA')
       end
 
-      slot || Slot.new(:empty, '')
+      slot || Slot.new(:empty, nil)
     end
   end
 end

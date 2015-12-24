@@ -4,7 +4,7 @@ class User
 
   def goes_to_home_page
     visit '/'
-    expect(find('#page-title')).to have_text('Home Page')
+    expect(page).to have_css('.choose-grade-section')
   end
 
   def enters_her_zipcode
@@ -19,7 +19,7 @@ class User
 
   def clicks_see_what_the_epa_says
     click_on 'Compare Now'
-    expect(find('#page-title')).to have_text('City Detail')
+    expect(page).to have_css('.compare-section')
   end
 
   def sees_her_air_quality_grade_vs_the_epas_air_quality_grade
