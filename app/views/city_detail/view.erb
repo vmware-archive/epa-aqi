@@ -18,14 +18,11 @@
   </div>
 </div>
 
-<div class="grade-section" style="width: 375px">
+<div id="grade-gradient" class="grade-section" style="width: 375px">
   <div class="pins">
-    <div style="width: 16%;">You</div>
-    <div style="width: 16%;"></div>
-    <div style="width: 16%;">EPA</div>
-    <div style="width: 16%;"></div>
-    <div style="width: 16%;"></div>
-    <div style="width: 16%;"></div>
+    <%- @slots.each do |slot| %>
+        <div class="<%= slot_type_to_css_class(slot.type) %>" style="width: 16%;"><%= slot.label %></div>
+    <%- end %>
   </div>
   <div class="gradient">
     <div style="width: 16%; background-color: #fff;">A</div>

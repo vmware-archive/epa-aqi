@@ -29,6 +29,13 @@ class User
     expect(page).to have_css('#epa-aqg')
     expect(find('#epa-aqg')).to have_content(/[A-F]/)
   end
+
+  def sees_air_quality_grade_gradient_with_her_and_the_epas_grades
+    within(:css, '#grade-gradient') do
+      expect(find('.pins')).to have_content('You')
+      expect(find('.pins')).to have_content('EPA')
+    end
+  end
 end
 
 
@@ -41,5 +48,6 @@ describe 'Pam gets perspective', :type => :feature do
     pam.clicks_see_what_the_epa_says
 
     pam.sees_her_air_quality_grade_vs_the_epas_air_quality_grade
+    pam.sees_air_quality_grade_gradient_with_her_and_the_epas_grades
   end
 end
