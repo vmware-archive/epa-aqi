@@ -1,7 +1,7 @@
 describe CityDetailController do
   let(:mock_aqg_calculator) { instance_double('AirQualityGradeCalculator') }
   let(:mock_slot_factory) { instance_double('SlotFactory') }
-  let(:expected_epa_aqg) { 'A' }
+  let(:expected_epa_aqg) { AirQualityGrade.new('A') }
   let(:expected_slots) {
     [Slot.new(:one_pin, 'EPA'), Slot.new(:one_pin, 'You'), Slot.new, Slot.new, Slot.new, Slot.new]
   }
@@ -22,16 +22,20 @@ describe CityDetailController do
     end
 
     it 'assigns @user_aqg to the air quality grade specified by user' do
-      user_aqg = 'B'
-      get :view, {'user-aqg' => user_aqg}
+      user_aqg = AirQualityGrade.new('B')
+      get :view, {'user-aqg' => user_aqg.grade}
       expect(assigns(:user_aqg)).to eq(user_aqg)
     end
 
     it 'assigns @slots to' do
-      user_aqg = 'B'
-      get :view, {'user-aqg' => user_aqg}
-
+      user_aqg = AirQualityGrade.new('B')
+      get :view, {'user-aqg' => user_aqg.grade}
       expect(assigns(:slots)).to eq(expected_slots)
+    end
+
+    it 'assigns @epa_aqg to the AirQualityGrade for the zipcode specified' do
+      get :view
+      expect(assigns(:epa_aqg)).to eq(expected_epa_aqg)
     end
 
     it 'assigns @epa_aqg to the air quality grade based on EPA\'s AQI scores for the zipcode specified' do

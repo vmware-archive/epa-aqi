@@ -5,13 +5,13 @@
 <div class="compare-section">
   <div class="compare-you" style="float: left; text-align: center;">
     You
-    <div id="user-aqg"><%= @user_aqg %></div>
+    <div id="user-aqg"><%= @user_aqg.grade %></div>
   </div>
   <div class="vs" style="float: left;">&nbsp;vs&nbsp;</div>
   <div class="compare-epa" style="float: left; text-align: center;">
     EPA
-    <div id="epa-aqg"><%= @epa_aqg %></div>
-    <div class="compare-aqi-score">32</div>
+    <div id="epa-aqg"><%= @epa_aqg.grade %></div>
+    <div class="compare-aqi-score"><%= @epa_aqg.aqi %></div>
   </div>
 </div>
 <hr style="clear: both;"/>

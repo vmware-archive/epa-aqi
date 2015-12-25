@@ -8,8 +8,8 @@ describe SlotFactory, :type => :custom do
     subject { SlotFactory.new.for_grades(epa_grade, user_grade) }
 
     describe 'when the User and EPA score differently' do
-      let(:epa_grade) { 'F' }
-      let(:user_grade) { 'B' }
+      let(:epa_grade) { AirQualityGrade.new('F') }
+      let(:user_grade) { AirQualityGrade.new('B') }
       it 'includes a :one_pin slot for each grade' do
         expect(subject[1]).to eq(YOU_SLOT)
         expect(subject[5]).to eq(EPA_SLOT)
@@ -25,8 +25,8 @@ describe SlotFactory, :type => :custom do
     end
 
     describe 'when the User and EPA score identically' do
-      let(:epa_grade) { 'A' }
-      let(:user_grade) { 'A' }
+      let(:epa_grade) { AirQualityGrade.new('A') }
+      let(:user_grade) { AirQualityGrade.new('A') }
       it 'includes a :two_pin slot for that grade' do
         expect(subject[0]).to eq(BOTH_SLOT)
       end

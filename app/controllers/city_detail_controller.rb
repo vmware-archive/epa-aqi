@@ -9,7 +9,7 @@ class CityDetailController < ApplicationController
 
   def view
     @zipcode = params['zipcode']
-    @user_aqg = params['user-aqg']
+    @user_aqg = AirQualityGrade.new(params['user-aqg'])
 
     @epa_aqg = aqg_calculator.for_zipcode(@zipcode)
     @slots = slot_factory.for_grades(@epa_aqg, @user_aqg)
