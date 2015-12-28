@@ -22,6 +22,10 @@ class User
     expect(page).to have_css('.compare-section')
   end
 
+  def sees_her_city_name
+    expect(find('#city-name')).to have_content(/[A-Za-z ]+/)
+  end
+
   def sees_her_air_quality_grade_vs_the_epas_air_quality_grade
     expect(page).to have_css('#user-aqg')
     expect(find('#user-aqg')).to have_content(/[A-F]/)
@@ -47,6 +51,7 @@ describe 'Pam gets perspective', :type => :feature do
     pam.rates_local_air_quality
     pam.clicks_see_what_the_epa_says
 
+    pam.sees_her_city_name
     pam.sees_her_air_quality_grade_vs_the_epas_air_quality_grade
     pam.sees_air_quality_grade_gradient_with_her_and_the_epas_grades
   end

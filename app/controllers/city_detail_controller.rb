@@ -9,6 +9,7 @@ class CityDetailController < ApplicationController
 
   def view
     @zipcode = params['zipcode']
+    @city_name = ::CityForZipcode::ZIP_TO_CITY[@zipcode].try(:titleize)
     @user_aqg = AirQualityGrade.new(params['user-aqg'])
 
     @epa_aqg = aqg_calculator.for_zipcode(@zipcode)

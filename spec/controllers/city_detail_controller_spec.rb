@@ -21,6 +21,12 @@ describe CityDetailController do
       expect(mock_aqg_calculator).to have_received(:for_zipcode).with(zipcode)
     end
 
+    it 'assigns @city_name to the city name for the zipcode supplied' do
+      zipcode = '90210'
+      get :view, {'zipcode' => zipcode}
+      expect(assigns(:city_name)).to eq('Beverly Hills')
+    end
+
     it 'assigns @user_aqg to the air quality grade specified by user' do
       user_aqg = AirQualityGrade.new('B')
       get :view, {'user-aqg' => user_aqg.grade}
