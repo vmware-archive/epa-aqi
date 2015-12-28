@@ -5,7 +5,7 @@ class EpaService
 
   def get_measures_for_zipcode(zipcode)
     response = @rest_client.get(
-        'http://www.airnowapi.org/aq/forecast/zipCode/',
+        'http://www.airnowapi.org/aq/observation/zipCode/current/',
         {
             params: {
                 zipCode: zipcode,

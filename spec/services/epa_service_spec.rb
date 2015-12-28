@@ -4,7 +4,7 @@ describe EpaService do
   describe '#get_aqi_for_zipcode' do
     subject(:epa_service) { EpaService.new(rest_client_mock) }
     let(:rest_client_mock) { double(RestClient) }
-    let(:api_endpoint) { 'http://www.airnowapi.org/aq/forecast/zipCode/' }
+    let(:api_endpoint) { 'http://www.airnowapi.org/aq/observation/zipCode/current/' }
     let(:params) { { zipCode: zipcode, format: format, api_key: api_key } }
     let(:zipcode) { '90401' }
     let(:format) { 'application/json' }
