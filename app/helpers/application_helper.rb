@@ -13,4 +13,9 @@ module ApplicationHelper
   def slot_type_to_css_class(slot_type)
     TYPE_TO_CLASS[slot_type] || 'empty-slot'
   end
+
+  def grade_to_css_class(grade)
+    "grade-#{grade.grade.try(:downcase)}"
+  end
+
 end

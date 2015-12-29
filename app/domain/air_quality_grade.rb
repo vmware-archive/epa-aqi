@@ -6,7 +6,7 @@ class AirQualityGrade
       @grade = grade_for_category_number(measure_or_grade['Category']['Number'])
     else
       @aqi = nil
-      @grade = measure_or_grade
+      @grade = measure_or_grade || 'X'
     end
 
   end
@@ -26,7 +26,7 @@ class AirQualityGrade
       when 6
         'F'
       else
-        '(unrecognized category number)'
+        'X'
     end
   end
 

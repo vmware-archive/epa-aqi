@@ -12,14 +12,14 @@
  <div class="compare-section">
   <div class="compare-you">
    <div class="you-title">You</div>
-   <div id="user-aqg" class="grade-a"><%= @user_aqg.grade %></div>
+   <div id="user-aqg" class="<%= grade_to_css_class(@user_aqg) %>"></div>
   </div>
   <div class="compar-vs-box">
   <div class="compare-vs"><span class="vs-position">vs</span></div>
   </div>
   <div class="compare-epa">
    <div class="epa-title">EPA</div>
-   <div id="epa-aqg" class="grade-b"><%= @epa_aqg.grade %></div>
+   <div id="epa-aqg" class="<%= grade_to_css_class(@epa_aqg) %>"></div>
    <div class="compare-aqi-score">Today's AQI = <%= @epa_aqg.aqi %></div>
   </div>
  </div>

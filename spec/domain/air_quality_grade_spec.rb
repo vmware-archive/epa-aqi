@@ -55,4 +55,19 @@ describe AirQualityGrade do
       end
     end
   end
+
+  describe 'when initialized with nil grade' do
+    subject { AirQualityGrade.new(nil) }
+    describe '#aqi' do
+      it 'returns nil' do
+        expect(subject.aqi).to be_nil
+      end
+    end
+    describe '#grade' do
+      it 'returns "X"' do
+        expect(subject.grade).to eq('X')
+      end
+    end
+  end
+
 end

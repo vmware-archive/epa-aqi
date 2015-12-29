@@ -14,7 +14,7 @@ class User
 
   def rates_local_air_quality
     expect(page).to have_content('What does the air quality feel like today?')
-    choose('F')
+    choose('user-aqg-F')
   end
 
   def clicks_see_what_the_epa_says
@@ -28,10 +28,10 @@ class User
 
   def sees_her_air_quality_grade_vs_the_epas_air_quality_grade
     expect(page).to have_css('#user-aqg')
-    expect(find('#user-aqg')).to have_content(/[A-F]/)
+    expect(find('.compare-you')).to have_css('.grade-a,.grade-b,.grade-c,.grade-d,.grade-e,.grade-f')
 
     expect(page).to have_css('#epa-aqg')
-    expect(find('#epa-aqg')).to have_content(/[A-F]/)
+    expect(find('.compare-epa')).to have_css('.grade-a,.grade-b,.grade-c,.grade-d,.grade-e,.grade-f')
   end
 
   def sees_air_quality_grade_gradient_with_her_and_the_epas_grades

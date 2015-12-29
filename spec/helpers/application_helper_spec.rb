@@ -33,4 +33,37 @@ describe ApplicationHelper do
       end
     end
   end
+  describe '#grade_to_css_class' do
+    subject { helper.grade_to_css_class(grade) }
+
+    describe 'when grade is A' do
+      let(:grade) { AirQualityGrade.new('A') }
+      specify { expect(subject).to eq('grade-a') }
+    end
+
+    describe 'when grade is B' do
+      let(:grade) { AirQualityGrade.new('B') }
+      specify { expect(subject).to eq('grade-b') }
+    end
+
+    describe 'when grade is C' do
+      let(:grade) { AirQualityGrade.new('C') }
+      specify { expect(subject).to eq('grade-c') }
+    end
+
+    describe 'when grade is D' do
+      let(:grade) { AirQualityGrade.new('D') }
+      specify { expect(subject).to eq('grade-d') }
+    end
+
+    describe 'when grade is E' do
+      let(:grade) { AirQualityGrade.new('E') }
+      specify { expect(subject).to eq('grade-e') }
+    end
+
+    describe 'when grade is F' do
+      let(:grade) { AirQualityGrade.new('F') }
+      specify { expect(subject).to eq('grade-f') }
+    end
+  end
 end
