@@ -1,3 +1,5 @@
+// VARIABLES
+
 $font-roboto-slab:'Roboto Slab', serif;
 $font-roboto: 'Roboto', sans-serif;
 $primary-color: #6F6F6F;
@@ -6,13 +8,15 @@ $grey-color: #C2BCB7;
 $taupe-color: #AB9A8A;
 $brown-color: #6F6F6F;
 $teal-color: #27D5BD;
-
 $grade-a: #FFF;
 $grade-b: #F7F6F6;
 $grade-c: #E4E0DF;
 $grade-d: #CAC2C0;
 $grade-e: #B7A8A0;
 $grade-f: #9D8774;
+$blue-shadow: 0px 0px 6px #B1E8F4;
+
+// BASIC
 
 h1 {
 	clear: both;
@@ -56,9 +60,11 @@ nav {
 	padding: 20px;
 }
 
+// CITY DETAIL
+
 .date {
 	background-color: #FFFFFF;
-	border: 1px solid #C2BCB7;
+	border: 1px solid $grey-color;
 	padding: 10px 20px 5px 20px;
 	display: inline-block;
 	font-family: $font-roboto-slab;
@@ -88,15 +94,29 @@ nav {
     transform: translateY(-50%);
 }
 
+// COMPARE SECTION
+
 .compare-section {
 	clear: both;
-	padding-top: 20px;
+	padding-top: 30px;
 }
 
 .compare-you {
 	float: left;
 	text-align: center;
 	font-family: $font-roboto-slab;
+}
+
+.you-title {
+	background-color: $teal-color;
+	color: #FFF;
+	padding: 5px;
+}
+
+.epa-title {
+	background-color: $blue-color;
+	color: #FFF;
+	padding: 5px;
 }
 
 .compare-epa {
@@ -113,12 +133,31 @@ nav {
 	margin-top: 10px;
 }
 
+.compare-vs {
+	background-color: #FFF;
+	border: 1px solid $grey-color;
+	width: 39px;
+	height: 39px;
+	float: left;
+	margin: 61px 15px 0 15px;
+	border-radius: 45px 45px 45px 45px;
+	-webkit-border-radius: 45px 45px 45px 45px;
+	-moz-border-radius: 45px 45px 45px 45px;
+	color: $blue-color;
+	font-size: 20px;
+	font-weight: 300;
+}
+
+.vs-position {
+	position: relative;
+    top: 7px;
+    left: 10px;
+}
+
 #user-aqg, #epa-aqg {
 	width: 130px;
 	height: 130px;
 	border: 1px solid #EFEFEF;
-	box-shadow: 0px 0px 6px #B1E8F4;
-	margin-top: 10px;
 }
 
 .grade-a {
@@ -158,30 +197,9 @@ nav {
     background-position: center;
 }
 
-.compare-vs {
-	background-color: #FFF;
-	border: 1px solid $grey-color;
-	width: 39px;
-	height: 39px;
-	float: left;
-	margin: 80px 15px 0 15px;
-	border-radius: 45px 45px 45px 45px;
-	-webkit-border-radius: 45px 45px 45px 45px;
-	-moz-border-radius: 45px 45px 45px 45px;
-	color: $blue-color;
-	font-size: 20px;
-	font-weight: 300;
-}
-
-.vs-position {
-	position: relative;
-    top: 7px;
-    left: 10px;
-}
-
 .gradient {
 	height: 43px;
-	box-shadow: 0px 0px 6px #B1E8F4;
+	box-shadow: $blue-shadow;
 }
 
 .grade-box {
@@ -217,6 +235,8 @@ nav {
 	background-repeat: no-repeat;
     background-position: center;
 }
+
+// PARAMETERS SECTION
 
 .parameter {
 	width: 118px;
@@ -254,6 +274,113 @@ nav {
 	border-right: 2px dotted #C2BCB7;
 	}
 }
+
+// HOME PAGE
+
+.location-zipcode, .coaching-tip {
+	margin-top: 10px;
+}
+
+input[type="text"] {
+	display: block;
+    width: 313px;
+    font-family: $font-roboto;
+    color: $brown-color;
+    font-size: 18px;
+    appearance: none;
+    box-shadow: none;
+    border-radius: none;
+	padding: 10px;
+  	border: solid 1px #dcdcdc;
+  	transition: box-shadow 0.3s, border 0.3s;
+}
+
+input[type="text"]:focus, .location-zipcode input[type="text"].focus {
+	outline: none;
+	border: solid 1px #EFEFEF;
+  	box-shadow: 0 0 5px 1px #B1E8F4;;
+}
+
+input[type="radio"] {
+	display:none;
+}
+
+form .grade-btn {
+    display: block;
+    width: 102px;
+    height: 102px;
+    padding: 25px 30px 30px 25px;
+    border-radius: 0px;
+    cursor: pointer;
+    float: left;
+    margin-top: 10px;
+    &:nth-child(odd) {
+    	margin-right: 10px;
+    }
+}
+
+.user-aqg-a {
+	background-color: $grade-a;
+	background-image: url("/images/A.png");
+	@extend .grade-extend;
+	box-shadow: $blue-shadow;
+}
+.user-aqg-b {
+	background-color: $grade-b;
+	background-image: url("/images/B.png");
+	@extend .grade-extend;
+	box-shadow: $blue-shadow;
+}
+.user-aqg-c {
+	background-color: $grade-c;
+	background-image: url("/images/C.png");
+	@extend .grade-extend;
+	box-shadow: $blue-shadow;
+}
+.user-aqg-d {
+	background-color: $grade-d;
+	background-image: url("/images/D.png");
+	@extend .grade-extend;
+	box-shadow: $blue-shadow;
+}
+.user-aqg-e {
+	background-color: $grade-e;
+	background-image: url("/images/E.png");
+	@extend .grade-extend;
+	box-shadow: $blue-shadow;
+}
+.user-aqg-f {
+	background-color: $grade-f;
+	background-image: url("/images/F.png");
+	@extend .grade-extend;
+	box-shadow: $blue-shadow;
+}
+
+button.compare-now {
+	background-color: $blue-color;
+	font-family: $font-roboto;
+	font-weight: 500;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+    width: 325px;
+    padding: 15px;
+    border: 0;
+    border-radius: 5px;
+    color: #FFF;
+    font-size: 16px;
+    cursor: pointer;
+    &:hover {
+    	transition: background-color 0.3s ease;
+    	background-color: $teal-color;
+    }
+    &:focus {
+    	outline: none;
+    	background-color: $teal-color;
+    }
+}
+
+
+
 
 
 
