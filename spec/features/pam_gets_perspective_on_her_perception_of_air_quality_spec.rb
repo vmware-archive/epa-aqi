@@ -13,7 +13,7 @@ class User
   end
 
   def rates_local_air_quality
-    expect(page).to have_content('What does the air feel like today?')
+    expect(page).to have_content('What does the air quality feel like today?')
     choose('C')
   end
 
