@@ -4,13 +4,47 @@ $primary-color: #6F6F6F;
 $blue-color: #58BED4;
 $grey-color: #C2BCB7;
 $taupe-color: #AB9A8A;
+$brown-color: #6F6F6F;
+
+$grade-a: #FFF;
+$grade-b: #F7F6F6;
+$grade-c: #E4E0DF;
+$grade-d: #CAC2C0;
+$grade-e: #B7A8A0;
+$grade-f: #9D8774;
+
+h1 {
+	clear: both;
+	font-family: $font-roboto-slab;
+	color: $brown-color;
+	font-size: 24px;
+	margin: 0;
+}
+
+p {
+	font-size: 16px;
+	font-family: $font-roboto;
+	color: $grey-color;
+	font-weight: 300;
+	font-size: 16px;
+	margin: 0;
+}
+
+.text-section {
+	padding: 20px 0;
+	clear: both;
+	h1 + p {
+		padding-top: 10px;
+	}
+}
 
 .header {
 	clear: both;
+	height: 80px;
 }
 
 .content-container {
-	width: 375px;
+	width: 335px;
 }
 
 .date {
@@ -34,12 +68,15 @@ $taupe-color: #AB9A8A;
 }
 
 .city-name {
-	width: 250px;
+	width: 237px;
 	font-family: $font-roboto-slab;
 	color: $primary-color;
 	float: left;
-	font-size: 24px;
+	font-size: 36px;
 	line-height: 1;
+	position: relative;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .compare-section {
@@ -59,24 +96,71 @@ $taupe-color: #AB9A8A;
 	font-family: $font-roboto-slab;
 }
 
+.compare-aqi-score {
+	font-size: 12px;
+	font-family: $font-roboto;
+	color: $grey-color;
+	font-weight: 300;
+	margin-top: 10px;
+}
+
 #user-aqg, #epa-aqg {
-	width: 150px;
-	height: 150px;
-	background-color: #ccc;
+	width: 130px;
+	height: 130px;
+	border: 1px solid #EFEFEF;
+	box-shadow: 0px 0px 6px #B1E8F4;
+	margin-top: 10px;
+}
+
+.grade-a {
+	background-color: $grade-a;
+	background-image: url("/images/A.png");
+	@extend .grade-extend;
+}
+.grade-b {
+	background-color: $grade-b;
+	background-image: url("/images/B.png");
+	@extend .grade-extend;
+}
+.grade-c {
+	background-color: $grade-c;
+	background-image: url("/images/C.png");
+	@extend .grade-extend;
+}
+.grade-d {
+	background-color: $grade-d;
+	background-image: url("/images/D.png");
+	@extend .grade-extend;
+}
+.grade-e {
+	background-color: $grade-e;
+	background-image: url("/images/E.png");
+	@extend .grade-extend;
+}
+.grade-f {
+	background-color: $grade-f;
+	background-image: url("/images/F.png");
+	@extend .grade-extend;
+}
+
+.grade-extend {
+	background-size: 73px 82px;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .compare-vs {
 	background-color: #FFF;
 	border: 1px solid $grey-color;
-	width: 43px;
-	height: 43px;
+	width: 39px;
+	height: 39px;
 	float: left;
-	margin: 70px 15px 0 15px;
+	margin: 82px 15px 0 15px;
 	border-radius: 45px 45px 45px 45px;
 	-webkit-border-radius: 45px 45px 45px 45px;
 	-moz-border-radius: 45px 45px 45px 45px;
 	color: $blue-color;
-	font-size: 24px;
+	font-size: 20px;
 	font-weight: 300;
 }
 
@@ -96,7 +180,8 @@ $taupe-color: #AB9A8A;
 }
 
 .gradient {
-	padding-top: 20px;
+	height: 43px;
+	box-shadow: 0px 0px 6px #B1E8F4;
 }
 
 .grade-box {
@@ -108,7 +193,65 @@ $taupe-color: #AB9A8A;
 	padding-top: 10px;
 }
 
+.grade-line {
+	height: 20px;
+	padding: 5px 0;
+}
 
+.dotted-line {
+	height: 20px;
+	border-left: 2px dotted $taupe-color;
+}
+
+.grade-number {
+	font-size: 12px;
+	color: $taupe-color;
+}
+
+.aqi-graph {
+	clear: both;
+	height: 29px;
+	margin-top: 20px;
+	background-image: url("/images/aqi-graph.png");
+	background-size: 335px 29px;
+	background-repeat: no-repeat;
+    background-position: center;
+}
+
+.parameter {
+	width: 122px;
+	padding: 20px;
+	float: left;
+	background-color: #FFF;
+	margin-top: 10px;
+	text-align: center;
+	&:nth-child(odd) {
+		margin-right: 10px;
+	}
+}
+
+.parameter-name {
+	font-family: $font-roboto-slab;
+	color: $brown-color;
+	font-size: 16px;
+}
+
+.parameter-aqi-score {
+	margin-top: 20px;
+	font-size: 24px;
+	color: $brown-color;
+	width: 60px;
+	text-align: center;
+	float: left;
+	line-height: 18px;
+	span {
+		font-size: 12px;
+		color: $grey-color;
+	}
+	&:nth-child(even) {
+	border-right: 2px dotted #C2BCB7;
+	}
+}
 
 
 

@@ -9,16 +9,21 @@
  <div class="compare-section">
   <div class="compare-you">
    You
-   <div id="user-aqg"><%= @user_aqg.grade %></div>
+   <div id="user-aqg" class="grade-a"><%= @user_aqg.grade %></div>
   </div>
   <div class="compar-vs-box">
   <div class="compare-vs"><span class="vs-position">vs</span></div>
   </div>
   <div class="compare-epa">
    EPA
-   <div id="epa-aqg"><%= @epa_aqg.grade %></div>
-   <div class="compare-aqi-score"><%= @epa_aqg.aqi %></div>
+   <div id="epa-aqg" class="grade-b"><%= @epa_aqg.grade %></div>
+   <div class="compare-aqi-score">AQI = <%= @epa_aqg.aqi %></div>
   </div>
+ </div>
+ 
+ <div class="text-section">
+  <h1>What does this grade mean?</h1>
+  <p>Grades are based on an AQI (Air Quality Index) score as seen here:</p>
  </div>
  
  <div id="grade-gradient" class="grade-section" style="clear: both;">
@@ -28,21 +33,21 @@
    <%- end %>
   </div>
   <div class="gradient" style="clear: both;">
-   <div class="grade-box" style=" width: 10%; background-color: #fff;">A</div>
-   <div class="grade-box" style=" width: 10%; background-color: #F7F6F6;">B</div>
-   <div class="grade-box" style=" width: 10%; background-color: #E4E0DF;">C</div>
-   <div class="grade-box" style=" width: 10%; background-color: #CAC2C0;">D</div>
-   <div class="grade-box" style=" width: 20%; background-color: #B7A8A0;">E</div>
-   <div class="grade-box" style=" width: 40%; background-color: #9D8774;">F</div>
+   <div class="grade-box" style="width: 10%; background-color: #FFF; color: #C6B9B0;">A</div>
+   <div class="grade-box" style="width: 10%; background-color: #F7F6F6; color: #C6B9B0;">B</div>
+   <div class="grade-box" style="width: 10%; background-color: #E4E0DF; color: #CBC3C1;">C</div>
+   <div class="grade-box" style="width: 10%; background-color: #CAC2C0; color: #DED9D8;">D</div>
+   <div class="grade-box" style="width: 20%; background-color: #B7A8A0; color: #D0C6BE;">E</div>
+   <div class="grade-box" style="width: 40%; background-color: #9D8774; color: #D0C6BE;">F</div>
   </div>
   <div class="grade-lines" style="clear: both;">
-   <div class="grade-line" style="float: left; width: 10%;">|</div>
-   <div class="grade-line" style="float: left; width: 10%;">|</div>
-   <div class="grade-line" style="float: left; width: 10%;">|</div>
-   <div class="grade-line" style="float: left; width: 10%;">|</div>
-   <div class="grade-line" style="float: left; width: 10%;">|</div>
-   <div class="grade-line" style="float: left; width: 20%; text-align: center;">|</div>
-   <div class="grade-line" style="float: left; width: 30%; text-align: right;">|</div>
+   <div class="grade-line" style="float: left; width: 10%;"><span class="dotted-line"></span></div>
+   <div class="grade-line" style="float: left; width: 10%;"><span class="dotted-line"></span></div>
+   <div class="grade-line" style="float: left; width: 10%;"><span class="dotted-line"></span></div>
+   <div class="grade-line" style="float: left; width: 10%;"><span class="dotted-line"></span></div>
+   <div class="grade-line" style="float: left; width: 10%;"><span class="dotted-line"></span></div>
+   <div class="grade-line" style="float: left; width: 20%; text-align: center;"><span class="dotted-line"></span></div>
+   <div class="grade-line" style="float: left; width: 30%; text-align: right;"><span class="dotted-line"></span></div>
   </div>
   <div class="aqi-number-scale" style="clear: both;">
    <div class="grade-number" style="float: left; width: 10%;">0</div>
@@ -54,28 +59,33 @@
    <div class="grade-number" style="float: left; width: 30%; text-align: right;">500</div>
   </div>
  </div>
- <hr style="clear: both;"/>
+
+ <div class="aqi-graph"></div>
+
+ <div class="text-section">
+  <p>The day’s AQI score is based on AQI scores from the top polutants. The EPA takes a look at the concentration of each pollutant </p>
+ </div>
 
  <div class="parameters-section">
   <div class="parameter">
-   <div class="parameter-name">Ground-Level Ozone</div>
-   <div class="parameter-aqi-score">38<span>Today</span></div>
-   <div class="parameter-aqi-score">20<span>Average</span></div>
+   <div class="parameter-name">Ground-leve Ozone</div>
+   <div class="parameter-aqi-score">38<br><span>Today</span></div>
+   <div class="parameter-aqi-score">20<br><span>Average</span></div>
   </div>
   <div class="parameter">
    <div class="parameter-name">Particle Pollution</div>
-   <div class="parameter-aqi-score">51<span>Today</span></div>
-   <div class="parameter-aqi-score">39<span>Average</span></div>
+   <div class="parameter-aqi-score">51<br><span>Today</span></div>
+   <div class="parameter-aqi-score">39<br><span>Average</span></div>
   </div>
   <div class="parameter">
    <div class="parameter-name">Carbon Monoxide</div>
-   <div class="parameter-aqi-score">101<span>Today</span></div>
-   <div class="parameter-aqi-score">157<span>Average</span></div>
+   <div class="parameter-aqi-score">101<br><span>Today</span></div>
+   <div class="parameter-aqi-score">157<br><span>Average</span></div>
   </div>
   <div class="parameter">
-   <div class="parameter-name">Sulfur Dioxide</div>
-   <div class="parameter-aqi-score">45<span>Today</span></div>
-   <div class="parameter-aqi-score">25<span>Average</span></div>
+   <div class="parameter-name">Sulfur <br>Dioxide</div>
+   <div class="parameter-aqi-score">45<br><span>Today</span></div>
+   <div class="parameter-aqi-score">25<br><span>Average</span></div>
   </div>
  </div>
 </div>
