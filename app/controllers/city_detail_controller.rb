@@ -19,14 +19,3 @@ class CityDetailController < ApplicationController
     @slots = slot_factory.for_grades(@epa_aqg, @user_aqg)
   end
 end
-
-=begin
-
-<div class="parameter">
-<div class="parameter-name">Ozone</div>
-   <div class="parameter-aqi-score">38<span>Today</span></div>
-   <div class="parameter-aqi-score">20<span>Average</span></div>
-  </div>
-
-
-=end

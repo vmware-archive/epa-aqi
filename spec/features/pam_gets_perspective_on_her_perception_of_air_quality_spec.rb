@@ -14,7 +14,7 @@ class User
 
   def rates_local_air_quality
     expect(page).to have_content('What does the air quality feel like today?')
-    choose('C')
+    choose('F')
   end
 
   def clicks_see_what_the_epa_says
@@ -36,8 +36,8 @@ class User
 
   def sees_air_quality_grade_gradient_with_her_and_the_epas_grades
     within(:css, '#grade-gradient') do
-      expect(find('.pins')).to have_content('You')
-      expect(find('.pins')).to have_content('EPA')
+      expect(find('.pins')).to have_css('.you-pin')
+      expect(find('.pins')).to have_css('.epa-pin')
     end
   end
 

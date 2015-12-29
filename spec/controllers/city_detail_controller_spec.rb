@@ -2,7 +2,7 @@ describe CityDetailController do
   let(:mock_slot_factory) { instance_double('SlotFactory') }
   let(:mock_epa_data_fetcher) { instance_double('EpaDataFetcher') }
   let(:expected_slots) {
-    [Slot.new(:one_pin, 'EPA'), Slot.new(:one_pin, 'You'), Slot.new, Slot.new, Slot.new, Slot.new]
+    [Slot.new(:epa_pin), Slot.new(:you_pin), Slot.new, Slot.new, Slot.new, Slot.new]
   }
   let(:expected_epa_data) {
     EpaData.new(AirQualityGrade.new('A'),

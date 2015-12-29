@@ -2,16 +2,22 @@ describe ApplicationHelper do
   describe '#slot_type_to_css_class' do
     subject { helper.slot_type_to_css_class(slot_type) }
 
-    describe 'when slot.type is :one_pin' do
-      let(:slot_type) { :one_pin }
-      it 'returns "single-pin"' do
-        expect(subject).to eq('single-pin')
+    describe 'when slot.type is :you_pin' do
+      let(:slot_type) { :you_pin }
+      it 'returns "you-pin"' do
+        expect(subject).to eq('you-pin')
       end
     end
-    describe 'when slot.type is :two_pin' do
-      let(:slot_type) { :two_pin }
-      it 'returns "multiple-pins"' do
-        expect(subject).to eq('multiple-pins')
+    describe 'when slot.type is :epa_pin' do
+      let(:slot_type) { :epa_pin }
+      it 'returns "epa-pin"' do
+        expect(subject).to eq('epa-pin')
+      end
+    end
+    describe 'when slot.type is :match_pin' do
+      let(:slot_type) { :match_pin }
+      it 'returns "match-pin"' do
+        expect(subject).to eq('match-pin')
       end
     end
     describe 'when slot.type is :empty' do

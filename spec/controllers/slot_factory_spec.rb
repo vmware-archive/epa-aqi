@@ -1,8 +1,8 @@
 describe SlotFactory, :type => :custom do
-  YOU_SLOT = Slot.new(:one_pin, 'You')
-  EPA_SLOT = Slot.new(:one_pin, 'EPA')
-  BOTH_SLOT = Slot.new(:two_pin, 'You and EPA')
-  EMPTY_SLOT = Slot.new(:empty, nil)
+  YOU_SLOT = Slot.new(:you_pin)
+  EPA_SLOT = Slot.new(:epa_pin)
+  MATCH_SLOT = Slot.new(:match_pin)
+  EMPTY_SLOT = Slot.new(:empty)
 
   describe '#for_grades' do
     subject { SlotFactory.new.for_grades(epa_grade, user_grade) }
@@ -28,7 +28,7 @@ describe SlotFactory, :type => :custom do
       let(:epa_grade) { AirQualityGrade.new('A') }
       let(:user_grade) { AirQualityGrade.new('A') }
       it 'includes a :two_pin slot for that grade' do
-        expect(subject[0]).to eq(BOTH_SLOT)
+        expect(subject[0]).to eq(MATCH_SLOT)
       end
 
       it 'sets the remaining slots to be empty' do

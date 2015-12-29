@@ -1,7 +1,8 @@
 module ApplicationHelper
   TYPE_TO_CLASS = {
-      one_pin: 'single-pin',
-      two_pin: 'multiple-pins'
+      you_pin: 'you-pin',
+      epa_pin: 'epa-pin',
+      match_pin: 'match-pin'
   }
   SLOT_WIDTHS = [10, 10, 10, 10, 20, 40]
 
