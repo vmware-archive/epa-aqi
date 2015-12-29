@@ -18,18 +18,22 @@
    v2.0 | 20110126
    License: none (public domain)
 */
+html {
+	background: #FFF;
+}
 
 body {
-	padding: 20px;
-	background: #f4fafc;
+	margin: 0;
+	background-color: #fff;
 	font-family: 'Roboto', sans-serif;
 	color: #6F6F6F;
-
-	 /* Old browsers */
-	/*background: -moz-linear-gradient(top,  #f4fafc 0%, #ffffff 100%);*/ /* FF3.6-15 */
-	/*background: -webkit-linear-gradient(top,  #f4fafc 0%,#ffffff 100%);*/ /* Chrome10-25,Safari5.1-6 */
-	/*background: linear-gradient(to bottom,  #f4fafc 0%,#ffffff 100%);*/ /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-	/*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f4fafc', endColorstr='#ffffff',GradientType=0 );*/ /* IE6-9 */
+	height: 100%
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background: -moz-linear-gradient(top,  #f4fafc 0%, #ffffff 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  #f4fafc 0%,#ffffff 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  #f4fafc 0%,#ffffff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f4fafc', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
 }
 
 ol, ul {
