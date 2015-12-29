@@ -1,10 +1,5 @@
 class AirQualityGradeCalculator
-  def epa_service(impl=EpaService.new)
-    @epa_service ||= impl
-  end
-
-  def for_zipcode(zipcode)
-    measures = epa_service.get_measures_for_zipcode(zipcode)
+  def grade_for(measures)
     measure = find_least_healthy_measure(measures)
     AirQualityGrade.new(measure)
   end

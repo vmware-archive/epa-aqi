@@ -40,6 +40,15 @@ class User
       expect(find('.pins')).to have_content('EPA')
     end
   end
+
+  def sees_top_pollutants_contributing_to_aqi_grade
+    expect(find('.parameters-section')).to have_content('Ozone')
+    expect(find('.parameters-section')).to have_content('Coarse Dust Particles (PM10)')
+    expect(find('.parameters-section')).to have_content('Fine Particles (PM2.5)')
+    expect(find('.parameters-section')).to have_content('Carbon Monoxide')
+    expect(find('.parameters-section')).to have_content('Sulfur Dioxide')
+    expect(find('.parameters-section')).to have_content('Nitrogen Dioxide')
+  end
 end
 
 
@@ -54,5 +63,6 @@ describe 'Pam gets perspective', :type => :feature do
     pam.sees_her_city_name
     pam.sees_her_air_quality_grade_vs_the_epas_air_quality_grade
     pam.sees_air_quality_grade_gradient_with_her_and_the_epas_grades
+    pam.sees_top_pollutants_contributing_to_aqi_grade
   end
 end
