@@ -42,9 +42,9 @@ class User
   end
 
   def sees_top_pollutants_contributing_to_aqi_grade
-    expect(find('.parameters-section')).to have_content('Ozone')
-    expect(find('.parameters-section')).to have_content('Coarse Dust Particles (PM10)')
-    expect(find('.parameters-section')).to have_content('Fine Particles (PM2.5)')
+    expect(find('.parameters-section')).to have_content('Ground-Level Ozone')
+    expect(find('.parameters-section')).to have_content('Coarse Dust Particles')
+    expect(find('.parameters-section')).to have_content('Fine Particles')
     expect(find('.parameters-section')).to have_content('Carbon Monoxide')
     expect(find('.parameters-section')).to have_content('Sulfur Dioxide')
     expect(find('.parameters-section')).to have_content('Nitrogen Dioxide')

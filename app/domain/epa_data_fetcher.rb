@@ -1,10 +1,10 @@
 class EpaDataFetcher
   CHEMICAL_TO_DISPLAY_NAME = {
-      'O3' => 'Ozone',
-      'PM2.5' => 'Fine Particles (PM2.5)',
-      'PM10' => 'Coarse Dust Particles (PM10)',
+      'O3' => 'Ground-Level Ozone',
+      'PM2.5' => 'Fine <br>Particles'.html_safe,
+      'PM10' => 'Coarse Dust Particles',
       'CO' => 'Carbon Monoxide',
-      'SO2' => 'Sulfur Dioxide',
+      'SO2' => 'Sulfur <br>Dioxide'.html_safe,
       'NO2' => 'Nitrogen Dioxide',
   }
 

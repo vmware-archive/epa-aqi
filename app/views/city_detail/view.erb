@@ -36,21 +36,21 @@
    <%- end %>
   </div>
   <div class="gradient" style="clear: both;">
-   <div class="grade-box" style="width: 10%; background-color: #FFF; color: #C6B9B0;">A</div>
-   <div class="grade-box" style="width: 10%; background-color: #F7F6F6; color: #C6B9B0;">B</div>
-   <div class="grade-box" style="width: 10%; background-color: #E4E0DF; color: #CBC3C1;">C</div>
-   <div class="grade-box" style="width: 10%; background-color: #CAC2C0; color: #DED9D8;">D</div>
-   <div class="grade-box" style="width: 20%; background-color: #B7A8A0; color: #D0C6BE;">E</div>
-   <div class="grade-box" style="width: 40%; background-color: #9D8774; color: #D0C6BE;">F</div>
+   <div class="grade-box grade-box-a">A</div>
+   <div class="grade-box grade-box-b">B</div>
+   <div class="grade-box grade-box-c">C</div>
+   <div class="grade-box grade-box-d">D</div>
+   <div class="grade-box grade-box-e">E</div>
+   <div class="grade-box grade-box-f">F</div>
   </div>
   <div class="grade-lines" style="clear: both;">
-   <div class="grade-line" style="float: left; width: 10%;"><span class="dotted-line"></span></div>
-   <div class="grade-line" style="float: left; width: 10%;"><span class="dotted-line"></span></div>
-   <div class="grade-line" style="float: left; width: 10%;"><span class="dotted-line"></span></div>
-   <div class="grade-line" style="float: left; width: 10%;"><span class="dotted-line"></span></div>
-   <div class="grade-line" style="float: left; width: 10%;"><span class="dotted-line"></span></div>
-   <div class="grade-line" style="float: left; width: 20%; text-align: center;"><span class="dotted-line"></span></div>
-   <div class="grade-line" style="float: left; width: 30%; text-align: right;"><span class="dotted-line"></span></div>
+   <div class="grade-line" style="width: 10%;"><span class="dotted-line"></span></div>
+   <div class="grade-line" style="width: 10%;"><span class="dotted-line"></span></div>
+   <div class="grade-line" style="width: 10%;"><span class="dotted-line"></span></div>
+   <div class="grade-line" style="width: 10%;"><span class="dotted-line"></span></div>
+   <div class="grade-line" style="width: 10%;"><span class="dotted-line"></span></div>
+   <div class="grade-line" style="width: 20%; text-align: center;"><span class="dotted-line"></span></div>
+   <div class="grade-line" style="width: 30%; text-align: right;"><span class="dotted-line"></span></div>
   </div>
   <div class="aqi-number-scale" style="clear: both;">
    <div class="grade-number" style="float: left; width: 10%;">0</div>
@@ -73,8 +73,8 @@
     <%- @measures.each do |measure| %>
        <div class="parameter">
          <div class="parameter-name"><%= measure.parameter_name %></div>
-         <div class="parameter-aqi-score"><%= measure.aqi || '--' %><span>Today</span></div>
-         <div class="parameter-aqi-score"><%= measure.aqi_average || '--' %><span>Average</span></div>
+         <div class="parameter-aqi-score"><%= measure.aqi || '--' %><br /><span>Today</span></div>
+         <div class="parameter-aqi-score"><%= measure.aqi_average || '--' %><br /><span>Avg</span></div>
        </div>
    <%- end %>
  </div>

@@ -16,12 +16,12 @@ describe EpaDataFetcher do
 
   let(:expected_epa_datums) {
     [
-        EpaDatum.new('Ozone', 1, nil),
-        EpaDatum.new('Fine Particles (PM2.5)', 1, nil),
-        EpaDatum.new('Coarse Dust Particles (PM10)', 1, nil),
-        EpaDatum.new('Carbon Monoxide', 1, nil),
-        EpaDatum.new('Sulfur Dioxide', 1, nil),
-        EpaDatum.new('Nitrogen Dioxide', 1, nil)
+        EpaDatum.new(EpaDataFetcher::CHEMICAL_TO_DISPLAY_NAME['O3'], 1, nil),
+        EpaDatum.new(EpaDataFetcher::CHEMICAL_TO_DISPLAY_NAME['PM2.5'], 1, nil),
+        EpaDatum.new(EpaDataFetcher::CHEMICAL_TO_DISPLAY_NAME['PM10'], 1, nil),
+        EpaDatum.new(EpaDataFetcher::CHEMICAL_TO_DISPLAY_NAME['CO'], 1, nil),
+        EpaDatum.new(EpaDataFetcher::CHEMICAL_TO_DISPLAY_NAME['SO2'], 1, nil),
+        EpaDatum.new(EpaDataFetcher::CHEMICAL_TO_DISPLAY_NAME['NO2'], 1, nil)
     ]
   }
 
@@ -64,12 +64,12 @@ describe EpaDataFetcher do
       }
       let(:expected_epa_datums) {
         [
-            EpaDatum.new('Ozone', 1, nil),
-            EpaDatum.new('Nitrogen Dioxide', 1, nil),
-            EpaDatum.new('Fine Particles (PM2.5)', nil, nil),
-            EpaDatum.new('Coarse Dust Particles (PM10)', nil, nil),
-            EpaDatum.new('Carbon Monoxide', nil, nil),
-            EpaDatum.new('Sulfur Dioxide', nil, nil)
+            EpaDatum.new(EpaDataFetcher::CHEMICAL_TO_DISPLAY_NAME['O3'], 1, nil),
+            EpaDatum.new(EpaDataFetcher::CHEMICAL_TO_DISPLAY_NAME['NO2'], 1, nil),
+            EpaDatum.new(EpaDataFetcher::CHEMICAL_TO_DISPLAY_NAME['PM2.5'], nil, nil),
+            EpaDatum.new(EpaDataFetcher::CHEMICAL_TO_DISPLAY_NAME['PM10'], nil, nil),
+            EpaDatum.new(EpaDataFetcher::CHEMICAL_TO_DISPLAY_NAME['CO'], nil, nil),
+            EpaDatum.new(EpaDataFetcher::CHEMICAL_TO_DISPLAY_NAME['SO2'], nil, nil)
         ]
       }
       it 'should present pollutants with measures before those without' do
@@ -81,12 +81,12 @@ describe EpaDataFetcher do
       let(:measures_from_epa_service) { [] }
       let(:expected_epa_datums) {
         [
-            EpaDatum.new('Ozone', nil, nil),
-            EpaDatum.new('Fine Particles (PM2.5)', nil, nil),
-            EpaDatum.new('Coarse Dust Particles (PM10)', nil, nil),
-            EpaDatum.new('Carbon Monoxide', nil, nil),
-            EpaDatum.new('Sulfur Dioxide', nil, nil),
-            EpaDatum.new('Nitrogen Dioxide', nil, nil)
+            EpaDatum.new(EpaDataFetcher::CHEMICAL_TO_DISPLAY_NAME['O3'], nil, nil),
+            EpaDatum.new(EpaDataFetcher::CHEMICAL_TO_DISPLAY_NAME['PM2.5'], nil, nil),
+            EpaDatum.new(EpaDataFetcher::CHEMICAL_TO_DISPLAY_NAME['PM10'], nil, nil),
+            EpaDatum.new(EpaDataFetcher::CHEMICAL_TO_DISPLAY_NAME['CO'], nil, nil),
+            EpaDatum.new(EpaDataFetcher::CHEMICAL_TO_DISPLAY_NAME['SO2'], nil, nil),
+            EpaDatum.new(EpaDataFetcher::CHEMICAL_TO_DISPLAY_NAME['NO2'], nil, nil)
         ]
       }
       it 'returns a list of "empty" datum' do
@@ -102,12 +102,12 @@ describe EpaDataFetcher do
       }
       let(:expected_epa_datums) {
         [
-            EpaDatum.new('Ozone', nil, nil),
-            EpaDatum.new('Fine Particles (PM2.5)', nil, nil),
-            EpaDatum.new('Coarse Dust Particles (PM10)', nil, nil),
-            EpaDatum.new('Carbon Monoxide', nil, nil),
-            EpaDatum.new('Sulfur Dioxide', nil, nil),
-            EpaDatum.new('Nitrogen Dioxide', nil, nil)
+            EpaDatum.new(EpaDataFetcher::CHEMICAL_TO_DISPLAY_NAME['O3'], nil, nil),
+            EpaDatum.new(EpaDataFetcher::CHEMICAL_TO_DISPLAY_NAME['PM2.5'], nil, nil),
+            EpaDatum.new(EpaDataFetcher::CHEMICAL_TO_DISPLAY_NAME['PM10'], nil, nil),
+            EpaDatum.new(EpaDataFetcher::CHEMICAL_TO_DISPLAY_NAME['CO'], nil, nil),
+            EpaDatum.new(EpaDataFetcher::CHEMICAL_TO_DISPLAY_NAME['SO2'], nil, nil),
+            EpaDatum.new(EpaDataFetcher::CHEMICAL_TO_DISPLAY_NAME['NO2'], nil, nil)
         ]
       }
       it 'should return only the top EPA pollutants' do

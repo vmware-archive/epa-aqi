@@ -230,9 +230,42 @@ nav {
 	padding-top: 10px;
 }
 
+.grade-box-a {
+	width: 10%; 
+	background-color: #FFF; 
+	color: #C6B9B0;
+}
+
+.grade-box-b {
+	width: 10%; 
+	background-color: #F7F6F6; 
+	color: #C6B9B0;
+}
+.grade-box-c {
+	width: 10%; 
+	background-color: #E4E0DF; 
+	color: #CBC3C1;
+}
+.grade-box-d {
+	width: 10%; 
+	background-color: #CAC2C0; 
+	color: #DED9D8;
+}
+.grade-box-e {
+	width: 20%; 
+	background-color: #B7A8A0; 
+	color: #D0C6BE;
+}
+.grade-box-f {
+	width: 40%; 
+	background-color: #9D8774; 
+	color: #D0C6BE;
+}
+
 .grade-line {
 	height: 20px;
 	padding: 5px 0;
+	float: left;
 }
 
 .dotted-line {
@@ -258,7 +291,8 @@ nav {
 // PARAMETERS SECTION
 
 .parameter {
-	width: 118px;
+	width: 120px;
+	height: 104px;
 	padding: 20px;
 	float: left;
 	background-color: #FFF;
