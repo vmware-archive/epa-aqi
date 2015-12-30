@@ -6,7 +6,7 @@
 </nav>
 <div class="content-container">
  <div class="header">
-  <div class="date"><%= Time.now.strftime("%e") %><br><span class="date-month"><%= Time.now.strftime("%b") %></span></div>
+  <div class="date"><%= Time.zone.now.strftime('%e') %><br><span class="date-month"><%= Time.zone.now.strftime('%b') %></span></div>
   <div id="city-name" class="city-name"><%= @city_name %></div>
  </div>
  <div class="compare-section">
