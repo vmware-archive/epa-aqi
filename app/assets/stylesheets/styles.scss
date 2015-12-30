@@ -26,13 +26,20 @@ h1 {
 	margin: 0;
 }
 
-p {
+p, li {
 	font-size: 16px;
 	font-family: $font-roboto;
 	color: $grey-color;
 	font-weight: 300;
 	font-size: 16px;
 	margin: 0;
+}
+
+ul {
+	padding-left: 17px;
+	li {
+		padding: 5px 0;
+	}
 }
 
 nav {
@@ -235,6 +242,30 @@ nav {
 	padding-top: 10px;
 }
 
+.epa-pin {
+	height: 37px;
+	background-image: url("/images/epa-pin.png");
+	background-size: 30px 37px;
+	background-repeat: no-repeat;
+    background-position: center;
+}
+
+.you-pin {
+	height: 37px;
+	background-image: url("/images/you-pin.png");
+	background-size: 30px 37px;
+	background-repeat: no-repeat;
+    background-position: center;
+}
+
+.match-pin {
+	height: 37px;
+	background-image: url("/images/epa-pin.png");
+	background-size: 30px 37px;
+	background-repeat: no-repeat;
+    background-position: center;
+}
+
 .width-10 {
 	width: 10%;
 }
@@ -346,6 +377,22 @@ nav {
 	&:nth-child(even) {
 	border-right: 2px dotted #C2BCB7;
 	}
+}
+
+.list-box {
+	clear:both;
+	padding-top: 20px;
+}
+
+.list-icon {
+	width: 45px;
+	margin-right: 20px;
+	float: left;
+}
+
+.list-item {
+	width: 270px;
+	float: left;
 }
 
 // HOME PAGE
