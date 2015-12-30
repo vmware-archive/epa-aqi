@@ -499,23 +499,6 @@ button.compare-now {
     }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+input[type="radio"]:checked + .grade-btn {
+  border: 1px inset red;
+}
