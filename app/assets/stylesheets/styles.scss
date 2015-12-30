@@ -534,9 +534,6 @@ footer {
 	background-color: $brown-color;
 	height: 55px;
 	color: #FFF;
-	ol {
-		margin-bottom: 0;
-	}
 }
 
 .footer-container {
@@ -551,4 +548,19 @@ footer {
 	p {
 		color: #FFF;
 	}
+}
+
+.page-wrap {
+	min-height: 100%;
+  /* equal to footer height */
+  	margin-bottom: -55px; 
+}
+
+.page-wrap:after {
+  content: "";
+  display: block;
+}
+
+footer, .page-wrap:after {
+	height: 55px;
 }
