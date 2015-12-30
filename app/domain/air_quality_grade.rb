@@ -1,33 +1,21 @@
 class AirQualityGrade
   attr_reader :aqi, :grade
+
+  GRADE_FOR_CATEGORY_NUMBER = { 1 => 'A', 2 => 'B', 3 => 'C', 4 => 'D', 5 => 'E', 6 => 'F' }
+
   def initialize(measure_or_grade)
-    if measure_or_grade.is_a?(Hash)
-      @aqi = measure_or_grade['AQI']
-      @grade = grade_for_category_number(measure_or_grade['Category']['Number'])
+    if is_a_measure?(measure_or_grade)
+      measure = measure_or_grade
+      @aqi = measure['AQI']
+      @grade = GRADE_FOR_CATEGORY_NUMBER[measure['Category']['Number']] || 'X'
     else
       @aqi = nil
       @grade = measure_or_grade || 'X'
     end
-
   end
 
-  def grade_for_category_number(category_number)
-    case category_number
-      when 1
-        'A'
-      when 2
-        'B'
-      when 3
-        'C'
-      when 4
-        'D'
-      when 5
-        'E'
-      when 6
-        'F'
-      else
-        'X'
-    end
+  def is_a_measure?(measure_or_grade)
+    measure_or_grade.is_a?(Hash)
   end
 
   def ==(other_aqg)
