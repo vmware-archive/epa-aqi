@@ -5,6 +5,7 @@ $font-roboto: 'Roboto', sans-serif;
 $primary-color: #6F6F6F;
 $blue-color: #58BED4;
 $grey-color: #C2BCB7;
+$copy-color: #999999;
 $taupe-color: #AB9A8A;
 $brown-color: #6F6F6F;
 $teal-color: #27D5BD;
@@ -29,7 +30,7 @@ h1 {
 p, li {
 	font-size: 16px;
 	font-family: $font-roboto;
-	color: $grey-color;
+	color: $copy-color;
 	font-weight: 300;
 	font-size: 16px;
 	margin: 0;
@@ -499,6 +500,14 @@ button.compare-now {
     }
 }
 
+.grade-picker {
+	float: left;
+	&:nth-child(even) {
+		padding-left: 10px;
+	}
+}
+
 input[type="radio"]:checked + .grade-btn {
-  border: 1px inset red;
+  // border: 5px solid $teal-color;
+  background-color: $teal-color;
 }
