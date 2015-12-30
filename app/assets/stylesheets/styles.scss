@@ -36,6 +36,10 @@ p, li {
 	margin: 0;
 }
 
+.small {
+		font-size: 12px;
+	}
+
 ul {
 	padding-left: 17px;
 	li {
@@ -49,8 +53,21 @@ nav {
 	height: 50px;
 }
 
+.link { 
+	color: $blue-color;
+	text-decoration: none;
+}
+
+a, a:link, a:visited, a:hover, a:focus, a:active {
+	@extend .link;
+}
+
 .clear {
 	clear:both;
+}
+
+.left {
+	float: left;
 }
 
 .nav-container {
@@ -510,4 +527,28 @@ button.compare-now {
 input[type="radio"]:checked + .grade-btn {
   // border: 5px solid $teal-color;
   background-color: $teal-color;
+}
+
+footer {
+	width: 100%;
+	background-color: $brown-color;
+	height: 55px;
+	color: #FFF;
+	ol {
+		margin-bottom: 0;
+	}
+}
+
+.footer-container {
+	width: 335px;
+	margin: 0 auto;
+	padding: 17px 0;
+}
+
+.footer-right {
+	float: right;
+	padding-top: 4px;
+	p {
+		color: #FFF;
+	}
 }
