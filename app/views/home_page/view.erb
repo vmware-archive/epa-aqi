@@ -57,3 +57,15 @@
   </form>
 </div>
 </div>
+
+<script>
+  $('input.location-zipcode').keypress(function(event) {
+    if (event.keyCode == 13) {
+      event.preventDefault();
+    }
+  });
+  $('input.location-zipcode').focus(function(event) {
+    console.log("event", event);
+    $(this).select();
+  });
+</script>
