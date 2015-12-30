@@ -15,3 +15,10 @@ If you download an updated copy of this file, place it in the `db/` direction an
 ```
 $ convert_csv_database_to_zipcode2city_hash.sh
 ```
+
+# Deploy
+
+```
+cf push epa-aqi-acceptance
+cf set-env epa-aqi-acceptance RAILS_SERVE_STATIC_FILES "true"
+```
