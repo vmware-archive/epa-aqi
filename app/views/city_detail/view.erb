@@ -32,7 +32,7 @@
  <div id="grade-gradient" class="grade-section" style="clear: both;">
   <div class="pins">
    <%- @slots.each_with_index do |slot, index| %>
-   <div class="<%= slot_type_to_css_class(slot.type) %>" style="float: left; width: <%= slot_widths[index]%>%; text-align: center;"></div>
+   <div class="<%= slot_type_to_css_class(slot.type) %>" style="float: left; width: <%= slot_widths[index]%>%; text-align: center;">&nbsp;</div>
    <%- end %>
   </div>
   <div class="gradient">
