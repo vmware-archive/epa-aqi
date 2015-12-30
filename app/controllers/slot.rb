@@ -5,6 +5,6 @@ class Slot
   end
 
   def ==(other_slot)
-    self.type == other_slot.type
+    type == other_slot.type
   end
 end

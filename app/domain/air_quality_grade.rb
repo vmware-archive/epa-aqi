@@ -19,6 +19,6 @@ class AirQualityGrade
   end
 
   def ==(other_aqg)
-    self.aqi == other_aqg.aqi && self.grade == other_aqg.grade
+    aqi == other_aqg.aqi && grade == other_aqg.grade
   end
 end

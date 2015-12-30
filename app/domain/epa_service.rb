@@ -1,16 +1,19 @@
 class EpaService
+  AIRNOW_OBSERVATION_ENDPOINT = 'http://www.airnowapi.org/aq/observation/zipCode/current/'
+  AIRNOW_API_KEY = ENV['AIRNOW_API_KEY']
+
   def initialize(rest_client=RestClient)
     @rest_client = rest_client
   end
 
   def get_measures_for_zipcode(zipcode)
     response = @rest_client.get(
-        'http://www.airnowapi.org/aq/observation/zipCode/current/',
+        AIRNOW_OBSERVATION_ENDPOINT,
         {
             params: {
                 zipCode: zipcode,
                 format: 'application/json',
-                api_key: 'FF9A5E3C-BBAA-4D3D-84DC-E3590EB4E726'
+                api_key: AIRNOW_API_KEY
             }
         }
     )

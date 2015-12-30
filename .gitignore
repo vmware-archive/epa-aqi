@@ -5,5 +5,8 @@
 /log
 /tmp
 
+# ===- Secrets -===
+/config/local_env.yml
+
 # ===- RubyMine -===
 .idea/
