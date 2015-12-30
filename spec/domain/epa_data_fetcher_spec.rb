@@ -1,4 +1,6 @@
 describe EpaDataFetcher do
+  CHEMICAL_TO_DISPLAY_NAME = EpaDataFetcher::CHEMICAL_TO_DISPLAY_NAME
+
   let(:mock_epa_service) { instance_double('EpaService') }
   let(:mock_aqg_calculator) { instance_double('AirQualityGradeCalculator') }
   let(:zipcode) { '90210' }
@@ -16,12 +18,12 @@ describe EpaDataFetcher do
 
   let(:expected_epa_datums) {
     [
-        EpaDatum.new(EpaDataFetcher::CHEMICAL_TO_DISPLAY_NAME['O3'], 1, nil),
-        EpaDatum.new(EpaDataFetcher::CHEMICAL_TO_DISPLAY_NAME['PM2.5'], 1, nil),
-        EpaDatum.new(EpaDataFetcher::CHEMICAL_TO_DISPLAY_NAME['PM10'], 1, nil),
-        EpaDatum.new(EpaDataFetcher::CHEMICAL_TO_DISPLAY_NAME['CO'], 1, nil),
-        EpaDatum.new(EpaDataFetcher::CHEMICAL_TO_DISPLAY_NAME['SO2'], 1, nil),
-        EpaDatum.new(EpaDataFetcher::CHEMICAL_TO_DISPLAY_NAME['NO2'], 1, nil)
+        EpaDatum.new(CHEMICAL_TO_DISPLAY_NAME['O3'], 1, nil),
+        EpaDatum.new(CHEMICAL_TO_DISPLAY_NAME['PM2.5'], 1, nil),
+        EpaDatum.new(CHEMICAL_TO_DISPLAY_NAME['PM10'], 1, nil),
+        EpaDatum.new(CHEMICAL_TO_DISPLAY_NAME['CO'], 1, nil),
+        EpaDatum.new(CHEMICAL_TO_DISPLAY_NAME['SO2'], 1, nil),
+        EpaDatum.new(CHEMICAL_TO_DISPLAY_NAME['NO2'], 1, nil)
     ]
   }
 
@@ -64,12 +66,12 @@ describe EpaDataFetcher do
       }
       let(:expected_epa_datums) {
         [
-            EpaDatum.new(EpaDataFetcher::CHEMICAL_TO_DISPLAY_NAME['O3'], 1, nil),
-            EpaDatum.new(EpaDataFetcher::CHEMICAL_TO_DISPLAY_NAME['NO2'], 1, nil),
-            EpaDatum.new(EpaDataFetcher::CHEMICAL_TO_DISPLAY_NAME['PM2.5'], nil, nil),
-            EpaDatum.new(EpaDataFetcher::CHEMICAL_TO_DISPLAY_NAME['PM10'], nil, nil),
-            EpaDatum.new(EpaDataFetcher::CHEMICAL_TO_DISPLAY_NAME['CO'], nil, nil),
-            EpaDatum.new(EpaDataFetcher::CHEMICAL_TO_DISPLAY_NAME['SO2'], nil, nil)
+            EpaDatum.new(CHEMICAL_TO_DISPLAY_NAME['O3'], 1, nil),
+            EpaDatum.new(CHEMICAL_TO_DISPLAY_NAME['NO2'], 1, nil),
+            EpaDatum.new(CHEMICAL_TO_DISPLAY_NAME['PM2.5'], nil, nil),
+            EpaDatum.new(CHEMICAL_TO_DISPLAY_NAME['PM10'], nil, nil),
+            EpaDatum.new(CHEMICAL_TO_DISPLAY_NAME['CO'], nil, nil),
+            EpaDatum.new(CHEMICAL_TO_DISPLAY_NAME['SO2'], nil, nil)
         ]
       }
       it 'should present pollutants with measures before those without' do
@@ -81,12 +83,12 @@ describe EpaDataFetcher do
       let(:measures_from_epa_service) { [] }
       let(:expected_epa_datums) {
         [
-            EpaDatum.new(EpaDataFetcher::CHEMICAL_TO_DISPLAY_NAME['O3'], nil, nil),
-            EpaDatum.new(EpaDataFetcher::CHEMICAL_TO_DISPLAY_NAME['PM2.5'], nil, nil),
-            EpaDatum.new(EpaDataFetcher::CHEMICAL_TO_DISPLAY_NAME['PM10'], nil, nil),
-            EpaDatum.new(EpaDataFetcher::CHEMICAL_TO_DISPLAY_NAME['CO'], nil, nil),
-            EpaDatum.new(EpaDataFetcher::CHEMICAL_TO_DISPLAY_NAME['SO2'], nil, nil),
-            EpaDatum.new(EpaDataFetcher::CHEMICAL_TO_DISPLAY_NAME['NO2'], nil, nil)
+            EpaDatum.new(CHEMICAL_TO_DISPLAY_NAME['O3'], nil, nil),
+            EpaDatum.new(CHEMICAL_TO_DISPLAY_NAME['PM2.5'], nil, nil),
+            EpaDatum.new(CHEMICAL_TO_DISPLAY_NAME['PM10'], nil, nil),
+            EpaDatum.new(CHEMICAL_TO_DISPLAY_NAME['CO'], nil, nil),
+            EpaDatum.new(CHEMICAL_TO_DISPLAY_NAME['SO2'], nil, nil),
+            EpaDatum.new(CHEMICAL_TO_DISPLAY_NAME['NO2'], nil, nil)
         ]
       }
       it 'returns a list of "empty" datum' do
@@ -97,17 +99,18 @@ describe EpaDataFetcher do
     describe 'when there are pollutants that are not top EPA pollutants' do
       let(:measures_from_epa_service) {
         JSON.parse('[' +
-                       generate_measure_json_of_category(1, 1, 'Good', 'H3Si9')  +
+                       generate_measure_json_of_category(1, 1, 'Good', 'O3') + ', ' +
+                       generate_measure_json_of_category(51, 2, 'Moderate', 'H3Si9')  +
                        ']')
       }
       let(:expected_epa_datums) {
         [
-            EpaDatum.new(EpaDataFetcher::CHEMICAL_TO_DISPLAY_NAME['O3'], nil, nil),
-            EpaDatum.new(EpaDataFetcher::CHEMICAL_TO_DISPLAY_NAME['PM2.5'], nil, nil),
-            EpaDatum.new(EpaDataFetcher::CHEMICAL_TO_DISPLAY_NAME['PM10'], nil, nil),
-            EpaDatum.new(EpaDataFetcher::CHEMICAL_TO_DISPLAY_NAME['CO'], nil, nil),
-            EpaDatum.new(EpaDataFetcher::CHEMICAL_TO_DISPLAY_NAME['SO2'], nil, nil),
-            EpaDatum.new(EpaDataFetcher::CHEMICAL_TO_DISPLAY_NAME['NO2'], nil, nil)
+            EpaDatum.new(CHEMICAL_TO_DISPLAY_NAME['O3'], 1, nil),
+            EpaDatum.new(CHEMICAL_TO_DISPLAY_NAME['PM2.5'], nil, nil),
+            EpaDatum.new(CHEMICAL_TO_DISPLAY_NAME['PM10'], nil, nil),
+            EpaDatum.new(CHEMICAL_TO_DISPLAY_NAME['CO'], nil, nil),
+            EpaDatum.new(CHEMICAL_TO_DISPLAY_NAME['SO2'], nil, nil),
+            EpaDatum.new(CHEMICAL_TO_DISPLAY_NAME['NO2'], nil, nil)
         ]
       }
       it 'should return only the top EPA pollutants' do

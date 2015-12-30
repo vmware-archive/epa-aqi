@@ -8,7 +8,7 @@ describe EpaService do
     let(:params) { { zipCode: zipcode, format: format, api_key: api_key } }
     let(:zipcode) { '90401' }
     let(:format) { 'application/json' }
-    let(:api_key) { 'FF9A5E3C-BBAA-4D3D-84DC-E3590EB4E726' }
+    let(:api_key) { ENV['AIRNOW_API_KEY'] }
     let(:json_response) { File.read('spec/services/forecast_by_zipcode_with_valid_zipcode.response.json') }
 
     it 'should return the AQI for the zipcode' do

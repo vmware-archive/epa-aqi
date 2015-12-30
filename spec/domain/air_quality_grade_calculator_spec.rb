@@ -1,7 +1,6 @@
 describe AirQualityGradeCalculator do
   subject do
-    aqg_calculator = AirQualityGradeCalculator.new
-    aqg_calculator.grade_for(measures)
+    AirQualityGradeCalculator.new.grade_for(measures)
   end
 
   describe '#grade_for' do
