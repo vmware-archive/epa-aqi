@@ -11,7 +11,7 @@
   <form action="/city_detail" method="GET">
 
     <div class="location"><h1>Please enter your zip code</h1>
-      <input class="location-zipcode" type="text" name="zipcode" value="90401" />
+      <input class="location-zipcode" type="text" name="zipcode" />
       <p class="coaching-tip">Not your location? Enter zip code above</p>
     </div>
 
@@ -59,6 +59,10 @@
 </div>
 
 <script>
+  $.get("http://ipinfo.io", function (response) {
+    $('input.location-zipcode').val(response.postal);
+    console.log("response", response);
+  }, "jsonp");
   $('input.location-zipcode').keypress(function(event) {
     if (event.keyCode == 13) {
       event.preventDefault();
